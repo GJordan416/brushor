@@ -1,3 +1,60 @@
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #eee;
+  color: #333;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.dark #theme-toggle {
+  background: #222;
+  color: #fff;
+}
+
+/* Dark Mode Styles */
+.dark body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+.dark header, .dark footer {
+  background: #1f1f1f;
+}
+.dark nav a {
+  color: #e0e0e0;
+}
+.dark nav a.active, .dark nav a:hover {
+  text-decoration: underline;
+}
+.dark .hero {
+  background: #222;
+}
+.dark .tab-button {
+  background: #333;
+  color: #ccc;
+}
+.dark .tab-button.active {
+  background: #0056b3;
+  color: white;
+}
+.dark .tab-content {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+.dark table th {
+  background: #333;
+}
+.dark table td, .dark table th {
+  border-color: #555;
+}
+.dark .live-button {
+  background: #bb0000;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
