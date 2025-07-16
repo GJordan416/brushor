@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speaker Pro Tempore - U.S. House of Representatives</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Speaker Pro Tempore List</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="legislation.html">Legislation</a>
+      <a href="members.html">Members</a>
+      <a href="committees.html">Committees</a>
+      <a href="live.html">Live</a>
+      <a href="spt.html" class="active">SPTs</a>
+    </nav>
+  </header>
+
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌓</button>
+
+  <main>
+    <h2>🪑 Appointed Speaker Pro Tempore (SPT)</h2>
+    <p>This page lists the official record of all members appointed to serve as Speaker Pro Tempore of the House.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>State / District</th>
+          <th>Party</th>
+          <th>Date Appointed</th>
+          <th>Appointed By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rep. Ethan Kingly</td>
+          <td>GA-02</td>
+          <td>Republican</td>
+          <td>July 15th,2025</td>
+          <td>Speaker Jordan Kingly</td>
+        </tr>
+        <tr>
+          <td>Rep. Donald Biden</td>
+          <td>MA-08</td>
+          <td>Democrat</td>
+          <td>July 15, 2025</td>
+          <td>Speaker J. Kingly</td>
+        </tr>
+        <tr>
+          <td>Rep. Marcus Steele</td>
+          <td>TX-28</td>
+          <td>Republican</td>
+          <td>July 15th, 2025</td>
+          <td>Speaker J. Kingly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:1rem; font-size: 0.95rem;">
+      Note: The Speaker Pro Tempore is a temporary presiding officer designated by the Speaker of the House. In emergencies, the Clerk may reference this list for succession protocols.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 U.S. House of Representatives</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
+</body>
+</html>
