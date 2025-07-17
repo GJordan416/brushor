@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Members - U.S. House of Representatives</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -15,74 +20,141 @@
       <a href="members.html" class="active">Members</a>
       <a href="committees.html">Committees</a>
       <a href="live.html">Live</a>
+      <a href="spt.html">SPTs</a>
     </nav>
   </header>
 
+  <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌓</button>
+
   <main>
-    <h2>🧑‍⚖️ Members of the 119th Congress</h2>
+    <h2>🧑‍⚖️ Members of the House (16 Seats)</h2>
+    <p><strong>Active Members: 9 / 16</strong></p>
+
     <table>
       <thead>
         <tr>
           <th>Name</th>
           <th>Party</th>
           <th>State / District</th>
+          <th>Position</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
+        <!-- Active Members -->
         <tr>
-          <td>Rep. Jordan Kingly</td>
+          <td>Speaker Jordan Kingly</td>
           <td>Independent</td>
           <td>MS-01</td>
+          <td>Speaker of the House</td>
+          <td>Active</td>
         </tr>
         <tr>
-          <td>Rep. Donald Biden</td>
-          <td>Democrat</td>
-          <td>MA-08</td>
-        </tr>
-        <tr>
-          <td>Rep. Marcus A. Steele</td>
+          <td>Rep. Marcus Steele</td>
           <td>Republican</td>
-          <td>TX-28</td>
-        </tr>
-        <tr>
-          <td>Rep. Andre Whitfield</td>
-          <td>Democrat</td>
-          <td>KY-03</td>
-        </tr>
-        <tr>
-          <td>Rep. Ethan Kingly</td>
-          <td>Republican</td>
-          <td>GA-02</td>
-        </tr>
-        <tr>
-          <td>Rep. Henry Dawson</td>
-          <td>Democrat</td>
-          <td>MI-08</td>
-        </tr>
-        <tr>
-          <td>Rep. Nathan Tentacles</td>
-          <td>Republican</td>
-          <td>TX-11</td>
-        </tr>
-        <tr>
-          <td>Rep. Oliver Queen</td>
-          <td>Republican</td>
-          <td>MS-02</td>
-        </tr>
-        <tr>
-          <td>Rep. Vivienne Branson</td>
-          <td>Republican</td>
-          <td>CA-01</td>
+          <td>TX-08</td>
+          <td>Majority Leader</td>
+          <td>Active</td>
         </tr>
         <tr>
           <td>Rep. Torrie Bennett</td>
           <td>Republican</td>
           <td>FL-22</td>
+          <td>Representative</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Rep. Henry Dawson</td>
+          <td>Democrat</td>
+          <td>MI-08</td>
+          <td>Representative</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Rep. Vivienne Branson</td>
+          <td>Republican</td>
+          <td>CA-01</td>
+          <td>Majority Whip</td>
+          <td>Active</td>
         </tr>
         <tr>
           <td>Rep. Connor Powers</td>
           <td>Republican</td>
           <td>CA-19</td>
+          <td>Representative</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Rep. Donald Biden</td>
+          <td>Democrat</td>
+          <td>MA-08</td>
+          <td>Minority Leader</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Rep. Nathan Tentacles</td>
+          <td>Republican</td>
+          <td>TX-11</td>
+          <td>Representative</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Rep. Andre Whitfield</td>
+          <td>Democrat</td>
+          <td>KY-03</td>
+          <td>Minority Whip</td>
+          <td>Active</td>
+        </tr>
+
+        <!-- Inactive Seats (No District Info) -->
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
+        </tr>
+        <tr>
+          <td>Vacant</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>Vacant</td>
         </tr>
       </tbody>
     </table>
@@ -91,5 +163,18 @@
   <footer>
     <p>&copy; 2025 U.S. House of Representatives</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
 </body>
 </html>
